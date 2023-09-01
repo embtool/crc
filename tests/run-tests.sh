@@ -40,4 +40,16 @@ $CC $CFLAGS -O3 ../crc32_test.c ../../src/crc32.c -o crc32_test_O3
 $CC $CFLAGS -Os ../crc32_test.c ../../src/crc32.c -o crc32_test_Os
 ./crc32_test_Os | diff crc32_output.txt -
 
+# CRC64
+
+$CC $CFLAGS -O0 ../crc64_test.c ../../src/crc64.c -o crc64_test_O0
+./crc64_test_O0 >crc64_output.txt
+
+$CC $CFLAGS -O3 ../crc64_test.c ../../src/crc64.c -o crc64_test_O3
+./crc64_test_O3 | diff crc64_output.txt -
+
+$CC $CFLAGS -Os ../crc64_test.c ../../src/crc64.c -o crc64_test_Os
+./crc64_test_Os | diff crc64_output.txt -
+
+
 cd ..
