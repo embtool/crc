@@ -29,4 +29,15 @@ $CC $CFLAGS -O3 ../crc16_test.c ../../src/crc16.c -o crc16_test_O3
 $CC $CFLAGS -Os ../crc16_test.c ../../src/crc16.c -o crc16_test_Os
 ./crc16_test_Os | diff crc16_output.txt -
 
+# CRC32
+
+$CC $CFLAGS -O0 ../crc32_test.c ../../src/crc32.c -o crc32_test_O0
+./crc32_test_O0 >crc32_output.txt
+
+$CC $CFLAGS -O3 ../crc32_test.c ../../src/crc32.c -o crc32_test_O3
+./crc32_test_O3 | diff crc32_output.txt -
+
+$CC $CFLAGS -Os ../crc32_test.c ../../src/crc32.c -o crc32_test_Os
+./crc32_test_Os | diff crc32_output.txt -
+
 cd ..
