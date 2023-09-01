@@ -1,0 +1,10 @@
+# Tests
+build/
+
+# Editors
+*.swp
+.vscode/
+
+# Zig
+zig-cache/
+zig-out/
