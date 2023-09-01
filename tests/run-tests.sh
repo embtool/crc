@@ -7,6 +7,17 @@ CFLAGS="-std=c90 -pedantic -I../../include"
 mkdir -p build
 cd build
 
+# CRC8
+
+$CC $CFLAGS -O0 ../crc8_test.c ../../src/crc8.c -o crc8_test_O0
+./crc8_test_O0 >crc8_output.txt
+
+$CC $CFLAGS -O3 ../crc8_test.c ../../src/crc8.c -o crc8_test_O3
+./crc8_test_O3 | diff crc8_output.txt -
+
+$CC $CFLAGS -Os ../crc8_test.c ../../src/crc8.c -o crc8_test_Os
+./crc8_test_Os | diff crc8_output.txt -
+
 # CRC16
 
 $CC $CFLAGS -O0 ../crc16_test.c ../../src/crc16.c -o crc16_test_O0
