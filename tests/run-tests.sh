@@ -2,7 +2,7 @@
 set -xe
 
 CC="zig cc"
-CFLAGS="-std=c90 -pedantic -I../../include"
+CFLAGS="-std=c90 -pedantic -Wall -Wextra -I../../include"
 
 mkdir -p build
 cd build
